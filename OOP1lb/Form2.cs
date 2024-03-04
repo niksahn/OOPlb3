@@ -14,13 +14,15 @@ namespace OOP1lb
 {
     public partial class Form2 : Form
     {
-        MyHashTable test = new MyHashTable();
-        const int N = 100000;
-        Zheck[] testArr = new Zheck[N];
+        MyHashTable test = MyHashTable.Current;
+        int N;
+        Zheck[] testArr;
         ListViewItem hashItem = new ListViewItem("HashTable");
         ListViewItem arrayItem = new ListViewItem("Array");
         public Form2()
         {
+            N = test.Count;
+            testArr = new Zheck[N];
             InitializeComponent();
             listView1.Columns.Add("Коллекция");
             listView1.Columns.Add("Генерирование");
@@ -36,11 +38,10 @@ namespace OOP1lb
             listView1.Items.Clear();
             hashItem = new ListViewItem("HashTable");
             arrayItem = new ListViewItem("Array");
-            test = new MyHashTable();
+            test = MyHashTable.Current;
             testArr = new Zheck[N];
             int startTime = Environment.TickCount;
-            generate();
-            hashItem.SubItems.Add( (Environment.TickCount - startTime).ToString());
+            hashItem.SubItems.Add((Environment.TickCount - startTime).ToString());
             startTime = Environment.TickCount;
             generateMas();
             arrayItem.SubItems.Add((Environment.TickCount - startTime).ToString());
@@ -59,7 +60,7 @@ namespace OOP1lb
             startTime = Environment.TickCount;
             for (int i = 0; i < N; i++)
             {
-                var testik = test[random.Next(0,N-1).ToString()];
+                var testik = test[random.Next(0, N - 1).ToString()];
             }
             hashItem.SubItems.Add((Environment.TickCount - startTime).ToString());
             startTime = Environment.TickCount;

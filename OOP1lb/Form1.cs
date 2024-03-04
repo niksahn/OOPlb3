@@ -7,17 +7,10 @@ namespace OOP1lb
     internal partial class Form1 : Form
     {
         String selectedkey = "";
-        MyHashTable zheckList = new MyHashTable();
+        MyHashTable zheckList = MyHashTable.Current;
         public Form1()
         {
             InitializeComponent();
-        }
-
-        public Form1(MyHashTable zheckList1)
-        {
-            InitializeComponent();
-            foreach (Zheck zheck in zheckList1) listBox1.Items.Add(zheck.Name1);
-            zheckList = zheckList1;
             zheckList.objectCreated += (String key) =>
             {
                 MessageBox.Show("объект  " + key + " создан");
@@ -56,6 +49,7 @@ namespace OOP1lb
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             selectedkey = (String)listBox1.SelectedItem;
             Zheck? selected = zheckList[selectedkey];
             if (selected != null)

@@ -7,11 +7,27 @@ namespace OOP1lb
 
 internal class MyHashTable : IEnumerable
     {
-        private Hashtable _table = new Hashtable();
+        /// <summary>
+        /// Экземпляр
+        /// </summary>
+        private static readonly MyHashTable instance = new MyHashTable();
+
+        private Hashtable _table;
         public int Count {  get { return _table.Count; } }
+
+
+        /// <summary>
+        /// Текущее значение
+        /// </summary>
+        public static MyHashTable Current => instance;
 
         public event ZheckHandler objectCreated;
         public event ZheckHandler objectDeleted;
+
+        private MyHashTable()
+        {
+            _table = new Hashtable();
+        }
 
         public IEnumerator GetEnumerator() { return _table.GetEnumerator(); }
 
@@ -20,13 +36,14 @@ internal class MyHashTable : IEnumerable
         public Zheck? this[String? i]
         {
             get => (Zheck?) _table[i??""];
+            set => _table[i ?? ""] = value;
         }
         public bool Add(Zheck zheck)
         {
-            //if (_table.containskey(zheck.number1))
-            //{
-            //    return false;
-            //}
+            if (_table.ContainsKey(zheck.Number1))
+            {
+                return false;
+            }
             _table.Add(zheck.Name1, zheck);
             objectCreated?.Invoke(zheck.Name1);
             return true;
@@ -39,7 +56,7 @@ internal class MyHashTable : IEnumerable
 
         public void Remove(String key)
         {
-            objectDeleted.Invoke(key);
+            objectDeleted(key);
             _table.Remove(key);
         }
     }

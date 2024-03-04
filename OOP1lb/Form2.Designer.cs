@@ -35,9 +35,9 @@
             // button1
             // 
             button1.Dock = DockStyle.Bottom;
-            button1.Location = new Point(0, 271);
+            button1.Location = new Point(0, 290);
             button1.Name = "button1";
-            button1.Size = new Size(616, 63);
+            button1.Size = new Size(632, 63);
             button1.TabIndex = 1;
             button1.Text = "Замерить";
             button1.UseVisualStyleBackColor = true;
@@ -51,7 +51,7 @@
             listView1.GridLines = true;
             listView1.Location = new Point(0, 0);
             listView1.Name = "listView1";
-            listView1.Size = new Size(616, 271);
+            listView1.Size = new Size(632, 290);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -60,9 +60,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(616, 334);
+            ClientSize = new Size(632, 353);
             Controls.Add(listView1);
             Controls.Add(button1);
+            MinimumSize = new Size(650, 400);
             Name = "Form2";
             Text = "Тестирование";
             ResumeLayout(false);

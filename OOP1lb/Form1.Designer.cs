@@ -107,7 +107,7 @@
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(269, 810);
+            panel1.Size = new Size(269, 753);
             panel1.TabIndex = 0;
             // 
             // search
@@ -120,7 +120,7 @@
             // 
             // check
             // 
-            check.Location = new Point(12, 744);
+            check.Location = new Point(12, 683);
             check.Name = "check";
             check.Size = new Size(186, 55);
             check.TabIndex = 6;
@@ -131,7 +131,7 @@
             // count
             // 
             count.AutoSize = true;
-            count.Location = new Point(240, 744);
+            count.Location = new Point(240, 704);
             count.Name = "count";
             count.Size = new Size(17, 20);
             count.TabIndex = 5;
@@ -156,7 +156,7 @@
             listBox1.Location = new Point(12, 71);
             listBox1.Margin = new Padding(3, 4, 3, 4);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(251, 664);
+            listBox1.Size = new Size(251, 604);
             listBox1.TabIndex = 2;
             listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
@@ -283,10 +283,10 @@
             panel2.Controls.Add(label1);
             panel2.Controls.Add(button1);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(1007, 0);
+            panel2.Location = new Point(972, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(256, 810);
+            panel2.Size = new Size(256, 753);
             panel2.TabIndex = 1;
             // 
             // button5
@@ -370,13 +370,13 @@
             panel3.Location = new Point(269, 0);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(738, 810);
+            panel3.Size = new Size(703, 753);
             panel3.TabIndex = 2;
             // 
             // button6
             // 
             button6.BackColor = Color.FromArgb(255, 192, 192);
-            button6.Location = new Point(576, 593);
+            button6.Location = new Point(338, 593);
             button6.Name = "button6";
             button6.Size = new Size(86, 31);
             button6.TabIndex = 38;
@@ -554,12 +554,14 @@
             // Form1
             // 
             BackColor = Color.LightGray;
-            ClientSize = new Size(1263, 810);
+            ClientSize = new Size(1228, 753);
             Controls.Add(panel3);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(1000, 800);
             Name = "Form1";
+            ShowInTaskbar = false;
             Text = "Лабораторная работа 1 Сахно Никитов";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
